@@ -1,0 +1,1417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://ihdatacenter.com/IHWService" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="https://ihdatacenter.com/IHWService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://ihdatacenter.com/IHWService">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="checkusername" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserExistsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitParticipant">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitParticipantResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitParticipantResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteParticipant">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="participantid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteParticipantResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteParticipantResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateParticipant">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateParticipantResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateParticipantResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnrollmentData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnrollmentDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnrollmentDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnrollmentDataByParticipantID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="participantid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnrollmentDataByParticipantIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnrollmentDataByParticipantIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnrollmentDataByCurrentDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnrollmentDataByCurrentDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnrollmentDataByCurrentDateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnrollmentDataByCurrentDateAndParticipantID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="participantid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnrollmentDataByCurrentDateAndParticipantIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnrollmentDataByCurrentDateAndParticipantIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnrollmentDataByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnrollmentDataByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnrollmentDataByDateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnrollmentDataByDateAndParticipantID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="participantid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnrollmentDataByDateAndParticipantIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnrollmentDataByDateAndParticipantIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnrollmentDataByDateRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnrollmentDataByDateRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnrollmentDataByDateRangeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnrollmentDataByDateRangeAndParticipantID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="participantid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnrollmentDataByDateRangeAndParticipantIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnrollmentDataByDateRangeAndParticipantIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeighInData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeighInDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWeighInDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeighInDataByParticipantID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="participantid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeighInDataByParticipantIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWeighInDataByParticipantIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeighInDataByCurrentDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeighInDataByCurrentDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWeighInDataByCurrentDateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeighInDataByCurrentDateAndParticipantID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="participantid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeighInDataByCurrentDateAndParticipantIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWeighInDataByCurrentDateAndParticipantIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeighInDataByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeighInDataByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWeighInDataByDateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeighInDataByDateAndParticipantID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="participantid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeighInDataByDateAndParticipantIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWeighInDataByDateAndParticipantIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeighInDataByDateRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeighInDataByDateRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWeighInDataByDateRangeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeighInDataByDateRangeAndParticipantID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="participantid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeighInDataByDateRangeAndParticipantIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWeighInDataByDateRangeAndParticipantIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="value1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="value2" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="secureUser" type="tns:IHWSSecureUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IHWSSecureUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Machine" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewEnrollmentsForUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="secureUser" type="tns:IHWSSecureUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewEnrollmentsForUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNewEnrollmentsForUpdateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeighStationIDNamesByCompany">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="secureUser" type="tns:IHWSSecureUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeighStationIDNamesByCompanyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWeighStationIDNamesByCompanyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserIDPasswordsForUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="secureUser" type="tns:IHWSSecureUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserIDPasswordsForUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserIDPasswordsForUpdateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompanyIDNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="secureUser" type="tns:IHWSSecureUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompanyIDNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCompanyIDNamesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLabel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitRecordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLabel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateRecordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitNewRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLabel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="secureUser" type="tns:IHWSSecureUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitNewRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitNewRecordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitPasswordRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLabel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="secureUser" type="tns:IHWSSecureUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitPasswordRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitPasswordRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:UserExists" />
+  </wsdl:message>
+  <wsdl:message name="UserExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:UserExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitParticipantSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitParticipant" />
+  </wsdl:message>
+  <wsdl:message name="SubmitParticipantSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitParticipantResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteParticipantSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteParticipant" />
+  </wsdl:message>
+  <wsdl:message name="DeleteParticipantSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteParticipantResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateParticipantSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateParticipant" />
+  </wsdl:message>
+  <wsdl:message name="UpdateParticipantSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateParticipantResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEnrollmentDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentData" />
+  </wsdl:message>
+  <wsdl:message name="GetEnrollmentDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEnrollmentDataByParticipantIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentDataByParticipantID" />
+  </wsdl:message>
+  <wsdl:message name="GetEnrollmentDataByParticipantIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentDataByParticipantIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEnrollmentDataByCurrentDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentDataByCurrentDate" />
+  </wsdl:message>
+  <wsdl:message name="GetEnrollmentDataByCurrentDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentDataByCurrentDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEnrollmentDataByCurrentDateAndParticipantIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentDataByCurrentDateAndParticipantID" />
+  </wsdl:message>
+  <wsdl:message name="GetEnrollmentDataByCurrentDateAndParticipantIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentDataByCurrentDateAndParticipantIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEnrollmentDataByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentDataByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetEnrollmentDataByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentDataByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEnrollmentDataByDateAndParticipantIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentDataByDateAndParticipantID" />
+  </wsdl:message>
+  <wsdl:message name="GetEnrollmentDataByDateAndParticipantIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentDataByDateAndParticipantIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEnrollmentDataByDateRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentDataByDateRange" />
+  </wsdl:message>
+  <wsdl:message name="GetEnrollmentDataByDateRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentDataByDateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEnrollmentDataByDateRangeAndParticipantIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentDataByDateRangeAndParticipantID" />
+  </wsdl:message>
+  <wsdl:message name="GetEnrollmentDataByDateRangeAndParticipantIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentDataByDateRangeAndParticipantIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWeighInDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWeighInData" />
+  </wsdl:message>
+  <wsdl:message name="GetWeighInDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWeighInDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWeighInDataByParticipantIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWeighInDataByParticipantID" />
+  </wsdl:message>
+  <wsdl:message name="GetWeighInDataByParticipantIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWeighInDataByParticipantIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWeighInDataByCurrentDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWeighInDataByCurrentDate" />
+  </wsdl:message>
+  <wsdl:message name="GetWeighInDataByCurrentDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWeighInDataByCurrentDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWeighInDataByCurrentDateAndParticipantIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWeighInDataByCurrentDateAndParticipantID" />
+  </wsdl:message>
+  <wsdl:message name="GetWeighInDataByCurrentDateAndParticipantIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWeighInDataByCurrentDateAndParticipantIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWeighInDataByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWeighInDataByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetWeighInDataByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWeighInDataByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWeighInDataByDateAndParticipantIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWeighInDataByDateAndParticipantID" />
+  </wsdl:message>
+  <wsdl:message name="GetWeighInDataByDateAndParticipantIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWeighInDataByDateAndParticipantIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWeighInDataByDateRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWeighInDataByDateRange" />
+  </wsdl:message>
+  <wsdl:message name="GetWeighInDataByDateRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWeighInDataByDateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWeighInDataByDateRangeAndParticipantIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWeighInDataByDateRangeAndParticipantID" />
+  </wsdl:message>
+  <wsdl:message name="GetWeighInDataByDateRangeAndParticipantIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWeighInDataByDateRangeAndParticipantIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSoapIn">
+    <wsdl:part name="parameters" element="tns:Add" />
+  </wsdl:message>
+  <wsdl:message name="AddSoapOut">
+    <wsdl:part name="parameters" element="tns:AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewEnrollmentsForUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewEnrollmentsForUpdate" />
+  </wsdl:message>
+  <wsdl:message name="GetNewEnrollmentsForUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewEnrollmentsForUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWeighStationIDNamesByCompanySoapIn">
+    <wsdl:part name="parameters" element="tns:GetWeighStationIDNamesByCompany" />
+  </wsdl:message>
+  <wsdl:message name="GetWeighStationIDNamesByCompanySoapOut">
+    <wsdl:part name="parameters" element="tns:GetWeighStationIDNamesByCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserIDPasswordsForUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserIDPasswordsForUpdate" />
+  </wsdl:message>
+  <wsdl:message name="GetUserIDPasswordsForUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserIDPasswordsForUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyIDNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCompanyIDNames" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyIDNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCompanyIDNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitRecord" />
+  </wsdl:message>
+  <wsdl:message name="SubmitRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRecord" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitNewRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitNewRecord" />
+  </wsdl:message>
+  <wsdl:message name="SubmitNewRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitNewRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitPasswordRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitPasswordRequest" />
+  </wsdl:message>
+  <wsdl:message name="SubmitPasswordRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitPasswordRequestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IHWServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserExists">
+      <wsdl:input message="tns:UserExistsSoapIn" />
+      <wsdl:output message="tns:UserExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitParticipant">
+      <wsdl:input message="tns:SubmitParticipantSoapIn" />
+      <wsdl:output message="tns:SubmitParticipantSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteParticipant">
+      <wsdl:input message="tns:DeleteParticipantSoapIn" />
+      <wsdl:output message="tns:DeleteParticipantSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateParticipant">
+      <wsdl:input message="tns:UpdateParticipantSoapIn" />
+      <wsdl:output message="tns:UpdateParticipantSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentData">
+      <wsdl:input message="tns:GetEnrollmentDataSoapIn" />
+      <wsdl:output message="tns:GetEnrollmentDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByParticipantID">
+      <wsdl:input message="tns:GetEnrollmentDataByParticipantIDSoapIn" />
+      <wsdl:output message="tns:GetEnrollmentDataByParticipantIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByCurrentDate">
+      <wsdl:input message="tns:GetEnrollmentDataByCurrentDateSoapIn" />
+      <wsdl:output message="tns:GetEnrollmentDataByCurrentDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByCurrentDateAndParticipantID">
+      <wsdl:input message="tns:GetEnrollmentDataByCurrentDateAndParticipantIDSoapIn" />
+      <wsdl:output message="tns:GetEnrollmentDataByCurrentDateAndParticipantIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByDate">
+      <wsdl:input message="tns:GetEnrollmentDataByDateSoapIn" />
+      <wsdl:output message="tns:GetEnrollmentDataByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByDateAndParticipantID">
+      <wsdl:input message="tns:GetEnrollmentDataByDateAndParticipantIDSoapIn" />
+      <wsdl:output message="tns:GetEnrollmentDataByDateAndParticipantIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByDateRange">
+      <wsdl:input message="tns:GetEnrollmentDataByDateRangeSoapIn" />
+      <wsdl:output message="tns:GetEnrollmentDataByDateRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByDateRangeAndParticipantID">
+      <wsdl:input message="tns:GetEnrollmentDataByDateRangeAndParticipantIDSoapIn" />
+      <wsdl:output message="tns:GetEnrollmentDataByDateRangeAndParticipantIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInData">
+      <wsdl:input message="tns:GetWeighInDataSoapIn" />
+      <wsdl:output message="tns:GetWeighInDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByParticipantID">
+      <wsdl:input message="tns:GetWeighInDataByParticipantIDSoapIn" />
+      <wsdl:output message="tns:GetWeighInDataByParticipantIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByCurrentDate">
+      <wsdl:input message="tns:GetWeighInDataByCurrentDateSoapIn" />
+      <wsdl:output message="tns:GetWeighInDataByCurrentDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByCurrentDateAndParticipantID">
+      <wsdl:input message="tns:GetWeighInDataByCurrentDateAndParticipantIDSoapIn" />
+      <wsdl:output message="tns:GetWeighInDataByCurrentDateAndParticipantIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByDate">
+      <wsdl:input message="tns:GetWeighInDataByDateSoapIn" />
+      <wsdl:output message="tns:GetWeighInDataByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByDateAndParticipantID">
+      <wsdl:input message="tns:GetWeighInDataByDateAndParticipantIDSoapIn" />
+      <wsdl:output message="tns:GetWeighInDataByDateAndParticipantIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByDateRange">
+      <wsdl:input message="tns:GetWeighInDataByDateRangeSoapIn" />
+      <wsdl:output message="tns:GetWeighInDataByDateRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByDateRangeAndParticipantID">
+      <wsdl:input message="tns:GetWeighInDataByDateRangeAndParticipantIDSoapIn" />
+      <wsdl:output message="tns:GetWeighInDataByDateRangeAndParticipantIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:input message="tns:AddSoapIn" />
+      <wsdl:output message="tns:AddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewEnrollmentsForUpdate">
+      <wsdl:input message="tns:GetNewEnrollmentsForUpdateSoapIn" />
+      <wsdl:output message="tns:GetNewEnrollmentsForUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighStationIDNamesByCompany">
+      <wsdl:input message="tns:GetWeighStationIDNamesByCompanySoapIn" />
+      <wsdl:output message="tns:GetWeighStationIDNamesByCompanySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIDPasswordsForUpdate">
+      <wsdl:input message="tns:GetUserIDPasswordsForUpdateSoapIn" />
+      <wsdl:output message="tns:GetUserIDPasswordsForUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyIDNames">
+      <wsdl:input message="tns:GetCompanyIDNamesSoapIn" />
+      <wsdl:output message="tns:GetCompanyIDNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitRecord">
+      <wsdl:input message="tns:SubmitRecordSoapIn" />
+      <wsdl:output message="tns:SubmitRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecord">
+      <wsdl:input message="tns:UpdateRecordSoapIn" />
+      <wsdl:output message="tns:UpdateRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitNewRecord">
+      <wsdl:input message="tns:SubmitNewRecordSoapIn" />
+      <wsdl:output message="tns:SubmitNewRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitPasswordRequest">
+      <wsdl:input message="tns:SubmitPasswordRequestSoapIn" />
+      <wsdl:output message="tns:SubmitPasswordRequestSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IHWServiceSoap" type="tns:IHWServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserExists">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/UserExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitParticipant">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/SubmitParticipant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteParticipant">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/DeleteParticipant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateParticipant">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/UpdateParticipant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentData">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetEnrollmentData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByParticipantID">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetEnrollmentDataByParticipantID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByCurrentDate">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetEnrollmentDataByCurrentDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByCurrentDateAndParticipantID">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetEnrollmentDataByCurrentDateAndParticipantID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByDate">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetEnrollmentDataByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByDateAndParticipantID">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetEnrollmentDataByDateAndParticipantID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByDateRange">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetEnrollmentDataByDateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByDateRangeAndParticipantID">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetEnrollmentDataByDateRangeAndParticipantID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInData">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetWeighInData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByParticipantID">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetWeighInDataByParticipantID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByCurrentDate">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetWeighInDataByCurrentDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByCurrentDateAndParticipantID">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetWeighInDataByCurrentDateAndParticipantID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByDate">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetWeighInDataByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByDateAndParticipantID">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetWeighInDataByDateAndParticipantID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByDateRange">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetWeighInDataByDateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByDateRangeAndParticipantID">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetWeighInDataByDateRangeAndParticipantID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewEnrollmentsForUpdate">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetNewEnrollmentsForUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighStationIDNamesByCompany">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetWeighStationIDNamesByCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIDPasswordsForUpdate">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetUserIDPasswordsForUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyIDNames">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/GetCompanyIDNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitRecord">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/SubmitRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecord">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/UpdateRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitNewRecord">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/SubmitNewRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitPasswordRequest">
+      <soap:operation soapAction="https://ihdatacenter.com/IHWService/SubmitPasswordRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IHWServiceSoap12" type="tns:IHWServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserExists">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/UserExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitParticipant">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/SubmitParticipant" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteParticipant">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/DeleteParticipant" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateParticipant">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/UpdateParticipant" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentData">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetEnrollmentData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByParticipantID">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetEnrollmentDataByParticipantID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByCurrentDate">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetEnrollmentDataByCurrentDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByCurrentDateAndParticipantID">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetEnrollmentDataByCurrentDateAndParticipantID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByDate">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetEnrollmentDataByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByDateAndParticipantID">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetEnrollmentDataByDateAndParticipantID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByDateRange">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetEnrollmentDataByDateRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentDataByDateRangeAndParticipantID">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetEnrollmentDataByDateRangeAndParticipantID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInData">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetWeighInData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByParticipantID">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetWeighInDataByParticipantID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByCurrentDate">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetWeighInDataByCurrentDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByCurrentDateAndParticipantID">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetWeighInDataByCurrentDateAndParticipantID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByDate">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetWeighInDataByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByDateAndParticipantID">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetWeighInDataByDateAndParticipantID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByDateRange">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetWeighInDataByDateRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighInDataByDateRangeAndParticipantID">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetWeighInDataByDateRangeAndParticipantID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/Add" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewEnrollmentsForUpdate">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetNewEnrollmentsForUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeighStationIDNamesByCompany">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetWeighStationIDNamesByCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIDPasswordsForUpdate">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetUserIDPasswordsForUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyIDNames">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/GetCompanyIDNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitRecord">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/SubmitRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecord">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/UpdateRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitNewRecord">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/SubmitNewRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitPasswordRequest">
+      <soap12:operation soapAction="https://ihdatacenter.com/IHWService/SubmitPasswordRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IHWService">
+    <wsdl:port name="IHWServiceSoap" binding="tns:IHWServiceSoap">
+      <soap:address location="https://ihdatacenter.com/IHWService/IHWService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IHWServiceSoap12" binding="tns:IHWServiceSoap12">
+      <soap12:address location="https://ihdatacenter.com/IHWService/IHWService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
