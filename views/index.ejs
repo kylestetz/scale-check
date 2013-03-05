@@ -1,11 +1,100 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width" />
+    <title>Scale Check</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/normalize.css" />
+    <link rel="stylesheet" href="/stylesheets/foundation.css" />
+    <script src="/javascripts/vendor/custom.modernizr.js"></script>
+    <script>
+      document.write('<script src=' +
+      ('__proto__' in {} ? 'javascripts/vendor/zepto' : 'javascripts/vendor/jquery') +
+      '.js><\/script>')
+    </script>
+    <script src="javascripts/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    <script src="/javascripts/moment.js"></script>
+    <script src="/javascripts/scaleCheckActions.js"></script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>Scale Check</h1>
+      </div>
+    </div>
+
+    <!-- group ID -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="row collapse">
+          <div class="small-2 columns">
+            <span class="prefix">Group ID</span>
+          </div>
+          <div class="small-6 columns">
+            <input type="text" id="group-id-input" placeholder="enter a Group ID">
+          </div>
+          <div class="small-4 columns">
+            <div class="small-tag red">required</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- participant ID -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="row collapse">
+          <div class="small-2 columns">
+            <span class="prefix">Participant ID</span>
+          </div>
+          <div class="small-6 columns">
+            <input type="text" id="participant-id-input" placeholder="enter a Participant ID">
+          </div>
+          <div class="small-4 columns">
+            <div class="small-tag">optional</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- date -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="row collapse">
+          <div class="small-2 columns">
+            <span class="prefix">From Date</span>
+          </div>
+          <div class="small-6 columns">
+            <input type="text" id="date-input" placeholder="yyyy-mm-dd">
+          </div>
+          <div class="small-4 columns">
+            <div class="small-tag">optional</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- submit button -->
+    <div class="row">
+       <div class="large-8 columns">
+        <div class="row collapse">
+          <div class="small-3 columns">
+            <a href="#" id="group-submit-button" class="button postfix">submit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- window to display results -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div id="results-window"><h5>Enter a group ID to see some data.</h5></div>
+      </div>
+    </div>
+
+
+
+    
   </body>
 </html>

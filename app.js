@@ -34,6 +34,11 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 app.get('/GetWeighInData', getWeighInData.getWeighInData);
+app.get('/GetWeighInDataByParticipantID', getWeighInData.getWeighInDataByParticipantID);
+app.get('/GetWeighInDataByDateRangeAndParticipantID', getWeighInData.getWeighInDataByDateRangeAndParticipantID);
+app.get('/GetWeighInDataByDateRange', getWeighInData.getWeighInDataByDateRange);
+app.get('/listAPI', getWeighInData.listAPI);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

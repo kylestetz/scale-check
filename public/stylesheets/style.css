@@ -2,6 +2,43 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+body .small-tag {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 12px;
+}
+body .red {
+  color: red;
+}
+body #results-window {
+  overflow: scroll;
+  height: 400px;
+  padding: 20px 20px;
+  background-color: #eee;
+}
+body #results-window .date-line {
+  display: inline-block;
+  padding: 0 3px;
+  background-color: #333;
+  color: #eee;
+}
+body #results-window .additional-data {
+  display: inline-block;
+  padding: 0 3px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  background-color: #ccc;
+}
+body ul {
+  list-style-type: none;
+  padding: 0 0;
+  margin: 0 0;
+}
+body p {
+  padding: 0 0;
+  margin: 0 0;
+}
 a {
   color: #00B7FF;
 }

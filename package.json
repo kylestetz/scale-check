@@ -15,6 +15,6 @@
     "nconf": "*",
     "range_check": "*",
     "soap" : "git://github.com/kylestetz/node-soap.git#83f3567fb4a0125bc73b30bc9a46661aab0d5fbb",
-    "node-expat" : "*"
+    "xml2js" : "*"
   }
 }

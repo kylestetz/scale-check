@@ -1,37 +1,108 @@
 // route for making an XML request using a group ID
-// var expat = require('node-expat');
 var xml2js = require('xml2js');
-// var parser = new xml2js.Parser();
-
-// function ExpatParser() {
-//     var parser = new expat.Parser();
-//     this.parse = function(s) {
-//   parser.parse(s, false);
-//     };
-// }
 
 exports.getWeighInData = function(req, res){
-  // res.send(req.query.group);
   if(req.query.group){
-
+    // this is the call to the SOAP API
     req.soapClient.GetWeighInData({
         "group": req.query.group
       }, function(err, unparsed_result){
+        // the incoming data is XML stored at location 0 in a JSON object
         var weighInXML = unparsed_result.GetWeighInDataResult[0];
-        // return res.send(weighInXML);
-        //
         if(err){ res.send("error: " + err); }
         else {
+          // use xml2js to parse the XML
           xml2js.parseString(weighInXML, function(err, json_result){
-            if(err){ res.send(err); }
-            else {
+            if(err){
+              res.send(err);
+            } else {
+              // send the resulting JSON
               res.send(JSON.stringify(json_result));
             }
           });
         }
     });
-  } else if(req.query.username){
-    res.send("username");
   }
-  
+}
+
+exports.getWeighInDataByParticipantID = function(req, res){
+  if(req.query.group && req.query.participantid){
+    // this is the call to the SOAP API
+    req.soapClient.GetWeighInDataByParticipantID({
+        "group": req.query.group,
+        "participantid": req.query.participantid
+      }, function(err, unparsed_result){
+        // the incoming data is XML stored at location 0 in a JSON object
+        var weighInXML = unparsed_result.GetWeighInDataByParticipantIDResult[0];
+        if(err){ res.send("error: " + err); }
+        else {
+          // use xml2js to parse the XML
+          xml2js.parseString(weighInXML, function(err, json_result){
+            if(err){
+              res.send(err);
+            } else {
+              // send the resulting JSON
+              res.send(JSON.stringify(json_result));
+            }
+          });
+        }
+    });
+  }
+}
+
+exports.getWeighInDataByDateRangeAndParticipantID = function(req, res){
+  if(req.query.group && req.query.startDate && req.query.endDate && req.query.participantid){
+    // this is the call to the SOAP API
+    req.soapClient.GetWeighInDataByDateRangeAndParticipantID({
+        "group": req.query.group,
+        "startDate": req.query.startDate,
+        "endDate": req.query.endDate,
+        "participantid": req.query.participantid
+      }, function(err, unparsed_result){
+        // the incoming data is XML stored at location 0 in a JSON object
+        var weighInXML = unparsed_result.GetWeighInDataByDateRangeAndParticipantIDResult[0];
+        if(err){ res.send("error: " + err); }
+        else {
+          // use xml2js to parse the XML
+          xml2js.parseString(weighInXML, function(err, json_result){
+            if(err){
+              res.send(err);
+            } else {
+              // send the resulting JSON
+              res.send(JSON.stringify(json_result));
+            }
+          });
+        }
+    });
+  }
+}
+
+exports.getWeighInDataByDateRange = function(req, res){
+  if(req.query.group && req.query.startDate && req.query.endDate){
+    // this is the call to the SOAP API
+    req.soapClient.GetWeighInDataByDateRange({
+        "group": req.query.group,
+        "startDate": req.query.startDate,
+        "endDate": req.query.endDate
+      }, function(err, unparsed_result){
+        // the incoming data is XML stored at location 0 in a JSON object
+        var weighInXML = unparsed_result.GetWeighInDataByDateRangeResult[0];
+        if(err){ res.send("error: " + err); }
+        else {
+          // use xml2js to parse the XML
+          xml2js.parseString(weighInXML, function(err, json_result){
+            if(err){
+              res.send(err);
+            } else {
+              // send the resulting JSON
+              res.send(JSON.stringify(json_result));
+            }
+          });
+        }
+    });
+  }
+}
+
+exports.listAPI = function(req, res){
+  res.send(req.soapClient.describe());
 }
