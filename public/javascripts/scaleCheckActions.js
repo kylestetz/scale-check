@@ -4,6 +4,8 @@ $(document).ready(function(){
   var groupIdInputField = $('#group-id-input');
   var participantIdInputField = $('#participant-id-input');
   var dateInputField = $('#date-input');
+  // set the date input field to today
+  dateInputField.val(moment().format('YYYY-MM-DD'));
   var submitButton = $('#group-submit-button');
 
   // submit field & button callbacks
@@ -65,6 +67,7 @@ $(document).ready(function(){
 
     // request some data via the /GetWeighInData route
     $.getJSON('/GetWeighInData?group=' + encodedUrl, function(data){
+      console.log(data);
       // reverse the list so that the most recent item is first
       data.ParticipantWeighIns.ParticipantWeighIn.reverse();
       // list each weigh-in
